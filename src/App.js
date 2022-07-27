@@ -42,22 +42,19 @@ function App() {
     setActiveIndex(idx);
   };
   const onAutoSlider = (e) => {
-    console.log(e.target.value);
     if (slideTimer) {
       setSlideTimer(null);
       clearInterval(slideTimer);
     } else {
-      console.log(activeIndex === catalogs.length - 1 ? 0 : activeIndex + 1);
       const id = setInterval(() => {
         setActiveIndex((activeIndex) =>
           activeIndex === catalogs.length - 1 ? 0 : activeIndex + 1
         );
       }, slideDuration);
-      console.log("id", id);
       setSlideTimer(id);
     }
   };
-  console.log("activeIndex", activeIndex);
+
   return (
     <Fragment>
       <h8k-navbar header={title}></h8k-navbar>
